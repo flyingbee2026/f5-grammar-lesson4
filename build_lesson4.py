@@ -55,13 +55,13 @@ QUIZ_INTRO = ("Each sentence contains TWO errors: one in the form of a word (nou
               "adjective) and one in an inverted structure. Proofread the sentences.")
 QUIZ = [
     "Not only the new canteen is convenient for students, but the convenient of its "
-    "location also draws staff at lunchtime.",
+    "online ordering system also attracts busy teachers.",
     "Only by eating breakfast students can keep their energy up, yet many teenagers do not "
     "realise the important of a proper diet.",
     "Never the school has displayed its old photographs in the hall, although the "
     "significant of that history is obvious to former students.",
-    "Only by allowing customers to post honest reviews shops can prove the authentic of "
-    "their products.",
+    "Only by showing customers how their products are made shops can prove the authentic "
+    "of their products.",
     "Not only losing sleep affects students\u2019 test results, but the lose of "
     "concentration in class is also a serious problem.",
     "Never students should feel afraid of making mistakes when they speak English, because "
@@ -69,9 +69,9 @@ QUIZ = [
 ]
 QUIZ_KEY = [
     ("Not only is the new canteen convenient for students, but the convenience of its "
-     "location also draws staff at lunchtime. (Move is before the subject \u2014 \u2018Not "
-     "only\u2019 inverts the subject and the verb; convenient \u2192 convenience \u2014 a noun "
-     "is needed after \u2018the\u2019.)"),
+     "online ordering system also attracts busy teachers. (Move is before the subject "
+     "\u2014 \u2018Not only\u2019 inverts the subject and the verb; convenient \u2192 "
+     "convenience \u2014 a noun is needed after \u2018the\u2019.)"),
     ("Only by eating breakfast can students keep their energy up, yet many teenagers do not "
      "realise the importance of a proper diet. (Move can before students \u2014 \u2018Only "
      "by\u2019 inverts; important \u2192 importance \u2014 the noun follows \u2018the\u2019.)"),
@@ -79,9 +79,9 @@ QUIZ_KEY = [
      "significance of that history is obvious to former students. (Move has before the "
      "school \u2014 \u2018Never\u2019 inverts; significant \u2192 significance \u2014 a noun "
      "is needed after \u2018the\u2019.)"),
-    ("Only by allowing customers to post honest reviews can shops prove the authenticity of "
-     "their products. (Move can before shops \u2014 \u2018Only by\u2019 inverts; authentic "
-     "\u2192 authenticity \u2014 the noun follows \u2018the\u2019.)"),
+    ("Only by showing customers how their products are made can shops prove the "
+     "authenticity of their products. (Move can before shops \u2014 \u2018Only by\u2019 "
+     "inverts; authentic \u2192 authenticity \u2014 the noun follows \u2018the\u2019.)"),
     ("Not only does losing sleep affect students\u2019 test results, but the loss of "
      "concentration in class is also a serious problem. (Add does before the subject and use "
      "the base verb affect \u2014 \u2018Not only\u2019 inverts; lose \u2192 loss \u2014 a noun "
@@ -96,26 +96,29 @@ WARM_INTRO = ("Complete each cleft sentence with ONE word "
               "(it / is / was / that / who / what / until / when).")
 WARM = [
     ("___ is peer pressure that pushes teenagers to join in online bullying.", "It"),
-    ("It ___ the fear of being left out that pushes teenagers to join in.", "is"),
-    ("It was the school\u2019s slow response ___ allowed the bullying to continue.", "that"),
-    ("___ drives teenagers to join in online bullying is the fear of being left out.", "What"),
-    ("It is teachers ___ first notice how quickly cruel comments spread.", "who"),
-    ("All the school needs to do ___ provide a safe place to report abuse.", "is"),
+    ("It ___ the promise of a quick laugh that makes cruel posts so tempting to share.", "is"),
+    ("It was the school newspaper ___ first reported the story.", "that"),
+    ("___ drives a teenager to keep scrolling is the fear of missing out.", "What"),
+    ("It is teachers ___ first notice the change in a student\u2019s behaviour.", "who"),
+    ("All the school needs to do ___ train staff to spot the warning signs.", "is"),
     ("___ many parents fail to realise is how quickly cruel posts spread.", "What"),
     ("It ___ the lack of clear rules that allowed the rumours to spread.", "was"),
-    ("It was not ___ a student left the school that the bullying was taken seriously.", "until"),
-    ("What worries counsellors most ___ the speed at which cruel posts travel.", "is"),
+    ("It was not ___ parents complained to the principal that the bullying was investigated.",
+     "until"),
+    ("What worries counsellors most ___ the silence of the students who see it happen.", "is"),
     ("It is the victims of online bullying ___ often suffer in silence.", "who"),
     ("___ is not the phone itself, but the endless notifications, that distract students.", "It"),
     ("All it takes ___ five minutes of checking before you share a post.", "is"),
     ("It was only ___ the school posted the facts that the rumours stopped.", "when"),
-    ("___ struck the teachers most was how quickly the story spread across the year.", "What"),
-    ("It is careless sharing, rather than social media itself, ___ spreads rumours so fast.", "that"),
+    ("___ struck the teachers most was how fast a single post can reach the whole year group.",
+     "What"),
+    ("It is careless sharing, rather than social media itself, ___ spreads rumours so fast.",
+     "that"),
     ("What the panel recommends ___ a clearer policy on reporting abuse.", "is"),
-    ("It is the school\u2019s silence ___ allows online bullying to continue.", "that"),
-    ("___ matters most is how quickly a school responds when a victim reports abuse.", "What"),
     ("It is one trusted adult, more than any new policy, ___ makes the biggest "
      "difference to a victim.", "that"),
+    ("___ matters most is that victims know someone is on their side.", "What"),
+    ("It is the way a school responds ___ decides whether victims ever report again.", "that"),
 ]
 WARM_NOTE = ("Teacher\u2019s note: after \u2018It is / It was\u2019, use \u2018that\u2019 for things "
              "and \u2018who\u2019 for people; \u2018which\u2019 is possible for things but less "
@@ -141,9 +144,9 @@ EXAMPLES = [
      "People post cruel comments because they are anonymous.",
      "It is anonymity that encourages people to post cruel comments.",
      "It is anonymity that encourages people to post cruel comments. Behind a screen, nobody "
-     "has to see the person they are hurting, so the usual checks of a real conversation "
-     "disappear. Asking students to use their own names on the school forum would remove "
-     "that cover entirely."),
+     "has to face the person they are hurting, so the usual restraint of a face-to-face "
+     "conversation disappears. Asking students to use their own names on the school forum "
+     "would remove that cover entirely."),
     ("Example 2: It-cleft \u2013 setting up a contrast",
      "Many people blame violent games, but the silence of bystanders does the real damage.",
      "While many people blame violent games, it is the silence of bystanders that does the "
@@ -153,16 +156,18 @@ EXAMPLES = [
      "it. Teaching students to speak up matters more than banning one more game."),
     ("Example 3: Wh-cleft \u2013 presenting a recommendation",
      "The school should make it easier for victims to report bullying.",
-     "What the school must do is make it easier for victims to report bullying.",
-     "What the school must do is make it easier for victims to report bullying. One anonymous "
-     "form on the school website would take an afternoon to set up. Once students know that "
-     "a report will be read, the silence that protects bullies begins to disappear."),
+     "What the school should do is make it easier for victims to report bullying.",
+     "What the school should do is make it easier for victims to report bullying. One "
+     "anonymous form on the school website would take an afternoon to set up. Once students "
+     "know that a report will be read, the silence that protects bullies begins to "
+     "disappear."),
     ("Example 4: All-cleft \u2013 naming the only thing needed",
      "The school only has to post one clear rule about online behaviour.",
      "All the school has to do is post one clear rule about online behaviour.",
      "All the school has to do is post one clear rule about online behaviour. A single "
      "sentence in the student handbook would tell everyone what is expected of them. Such a "
-     "small step would make it far easier for victims to report what happens to them."),
+     "small step would show victims that the school takes the problem seriously, and more of "
+     "them would come forward."),
 ]
 
 OPENERS_TITLE = "Clefts as paragraph openers"
@@ -175,7 +180,7 @@ OPENERS = [
     ("Cleft opener (What \u2026 is \u2026):",
      "What many adults fail to realise is how strongly social media affects teenagers\u2019 "
      "self-esteem."),
-    ("Plain:", "Teenagers only need one adult who will listen without judging them."),
+    ("Plain:", "Most teenagers only need one adult who will listen without judging them."),
     ("Cleft opener (All \u2026 is \u2026):",
      "All most teenagers need is one adult who will listen without judging them."),
 ]
@@ -206,12 +211,13 @@ SETS = [
      "response that makes it worse."),
     ("Example Set 5 (Wh-cleft \u2013 the recommendation)",
      "The government should make platforms remove cruel posts within 24 hours.",
-     "Begin with \u2018What the government must do \u2026\u2019.",
-     "What the government must do is make platforms remove cruel posts within 24 hours."),
+     "Begin with \u2018What the government should do \u2026\u2019.",
+     "What the government should do is make platforms remove cruel posts within 24 hours."),
     ("Example Set 6 (All-cleft \u2013 the only thing needed)",
-     "To keep victims safe, the school only has to give them somewhere to go at break time.",
+     "To keep victims safe, the school only has to provide a safe place for them at break "
+     "time.",
      "Begin with \u2018All the school needs to do \u2026\u2019.",
-     "All the school needs to do is give victims somewhere to go at break time."),
+     "All the school needs to do is provide a safe place for victims at break time."),
     ("Example Set 7 (Wh-cleft \u2013 the hook)",
      "Adults say teenagers should just ignore cruel comments, but that is impossible.",
      "Begin with \u2018What adults fail to understand \u2026\u2019.",
@@ -258,12 +264,12 @@ SAMPLES = [
      "victims never tell anyone about it. All schools really need to do is give students one "
      "trusted adult and one simple way to report cruel messages. This small change, which "
      "costs almost nothing, would help thousands of teenagers currently suffering in "
-     "silence. Parents have a part to play as well, because a teenager is far more likely to "
-     "speak up when someone at home takes the problem seriously."),
+     "silence. A tutor-group discussion once a month would keep the topic alive, and victims "
+     "would know that the school is on their side."),
 ]
 SAMPLE_NOTE = ("Each sample uses ONE cleft: Sample 1 an it-cleft (It is \u2026 that \u2026), "
                "Sample 2 a wh-cleft (What \u2026 is \u2026) and Sample 3 an all-cleft (All "
-               "\u2026 needs to do is \u2026). Each sample also contains ONE relative clause "
+               "\u2026 need to do is \u2026). Each sample also contains ONE relative clause "
                "(\u2018which\u2019 in every case) \u2014 point these out to students before "
                "they write.")
 
