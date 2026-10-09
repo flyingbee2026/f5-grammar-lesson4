@@ -51,39 +51,45 @@ SUBJ = "F.5 English Language"
 TITLE = "Grammar \u2013 Lesson 4: Cleft sentences"
 TOPIC = "Cleft sentences"
 
-QUIZ_INTRO = ("Each sentence contains TWO errors: one in a noun form (nominalisation) "
-              "and one in subject\u2013verb agreement. Proofread the sentences.")
+QUIZ_INTRO = ("Each sentence contains TWO errors: one in the form of a word (noun or "
+              "adjective) and one in an inverted structure. Proofread the sentences.")
 QUIZ = [
-    "The school\u2019s decide to ban mobile phones in class has reduced distraction, "
-    "which make lessons easier for teachers.",
-    "Many parents worry about young people\u2019s rely on smartphones, because these "
-    "devices distracts them from their homework.",
-    "The improve of online security has protected customers, but some banks still "
-    "refuses to warn them about scams.",
-    "Students should show aware of the risks of sharing personal information online, "
-    "because careless posts spreads quickly among their classmates.",
-    "The government\u2019s refuse to control social media companies has led to a rise "
-    "in online scams, which worry many parents.",
+    "Not only the new canteen is convenient for students, but the convenient of its "
+    "location also draws staff at lunchtime.",
+    "Only by eating breakfast students can keep their energy up, yet many teenagers do not "
+    "realise the important of a proper diet.",
+    "Never the school has displayed its old photographs in the hall, although the "
+    "significant of that history is obvious to former students.",
+    "Only by allowing customers to post honest reviews shops can prove the authentic of "
+    "their products.",
+    "Not only losing sleep affects students\u2019 test results, but the lose of "
+    "concentration in class is also a serious problem.",
+    "Never students should feel afraid of making mistakes when they speak English, because "
+    "the confident to speak comes from practice.",
 ]
 QUIZ_KEY = [
-    ("The school\u2019s decision to ban mobile phones in class has reduced distraction, "
-     "which makes lessons easier for teachers. (decide \u2192 decision \u2014 a noun is "
-     "needed after \u2018the school\u2019s\u2019; make \u2192 makes \u2014 \u2018which\u2019 "
-     "refers to the whole idea of reduced distraction.)"),
-    ("Many parents worry about young people\u2019s reliance on smartphones, because these "
-     "devices distract them from their homework. (rely \u2192 reliance \u2014 the possessive "
-     "needs a noun; distracts \u2192 distract \u2014 \u2018these devices\u2019 is plural.)"),
-    ("The improvement of online security has protected customers, but some banks still "
-     "refuse to warn them about scams. (improve \u2192 improvement \u2014 \u2018the \u2026 "
-     "of\u2019 needs a noun; refuses \u2192 refuse \u2014 \u2018some banks\u2019 is plural.)"),
-    ("Students should show awareness of the risks of sharing personal information online, "
-     "because careless posts spread quickly among their classmates. (aware \u2192 awareness "
-     "\u2014 \u2018show\u2019 needs a noun; spreads \u2192 spread \u2014 \u2018careless "
-     "posts\u2019 is plural.)"),
-    ("The government\u2019s refusal to control social media companies has led to a rise in "
-     "online scams, which worries many parents. (refuse \u2192 refusal \u2014 the possessive "
-     "needs a noun; worry \u2192 worries \u2014 \u2018which\u2019 refers to the whole rise in "
-     "online scams.)"),
+    ("Not only is the new canteen convenient for students, but the convenience of its "
+     "location also draws staff at lunchtime. (Move is before the subject \u2014 \u2018Not "
+     "only\u2019 inverts the subject and the verb; convenient \u2192 convenience \u2014 a noun "
+     "is needed after \u2018the\u2019.)"),
+    ("Only by eating breakfast can students keep their energy up, yet many teenagers do not "
+     "realise the importance of a proper diet. (Move can before students \u2014 \u2018Only "
+     "by\u2019 inverts; important \u2192 importance \u2014 the noun follows \u2018the\u2019.)"),
+    ("Never has the school displayed its old photographs in the hall, although the "
+     "significance of that history is obvious to former students. (Move has before the "
+     "school \u2014 \u2018Never\u2019 inverts; significant \u2192 significance \u2014 a noun "
+     "is needed after \u2018the\u2019.)"),
+    ("Only by allowing customers to post honest reviews can shops prove the authenticity of "
+     "their products. (Move can before shops \u2014 \u2018Only by\u2019 inverts; authentic "
+     "\u2192 authenticity \u2014 the noun follows \u2018the\u2019.)"),
+    ("Not only does losing sleep affect students\u2019 test results, but the loss of "
+     "concentration in class is also a serious problem. (Add does before the subject and use "
+     "the base verb affect \u2014 \u2018Not only\u2019 inverts; lose \u2192 loss \u2014 a noun "
+     "is needed after \u2018the\u2019.)"),
+    ("Never should students feel afraid of making mistakes when they speak English, because "
+     "the confidence to speak comes from practice. (Move should before students \u2014 "
+     "\u2018Never\u2019 inverts; confident \u2192 confidence \u2014 the noun follows "
+     "\u2018the\u2019.)"),
 ]
 
 WARM_INTRO = ("Complete each cleft sentence with ONE word "
@@ -386,7 +392,8 @@ def build(variant="teacher"):
     el = b.clone(P_H2); b.set_text(el, "Part 1: Proofreading quiz"); b.push(el)
     el = b.clone(P_PLAIN); b.set_text(el, QUIZ_INTRO); b.push(el)
     qt = b.clone(T_QUIZ)
-    assert len(qt.findall(qn("w:tr"))) >= len(QUIZ)
+    while len(qt.findall(qn("w:tr"))) < len(QUIZ):
+        b.add_row(qt, 0)
     for i, s in enumerate(QUIZ):
         b.set_cell(qt, i, 0, s)
     for r in qt.findall(qn("w:tr"))[len(QUIZ):]:
@@ -395,6 +402,8 @@ def build(variant="teacher"):
     b.push(b.clone(P_BLANK))
     el = b.clone(P_ANS_LABEL); b.set_text(el, "Teacher\u2019s answers"); b.push(el)
     at = b.clone(T_ANSWERS)
+    while len(at.findall(qn("w:tr"))) < len(QUIZ_KEY) + 1:
+        b.add_row(at, 1)
     for i, corr in enumerate(QUIZ_KEY, start=1):
         b.set_cell(at, i, 0, str(i))
         b.set_cell(at, i, 1, corr)
