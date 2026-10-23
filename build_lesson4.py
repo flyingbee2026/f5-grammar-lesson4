@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build F5 Grammar Lesson 4 (revised v3): Cleft sentences — teacher version.
+"""Build F5 Grammar Lesson 4 (revised v4): Cleft sentences — teacher version.
 
 Template = Helen's finalised Lesson 3 TEACHER docx (keeps styles.xml).
 """
@@ -56,151 +56,95 @@ QUIZ_INTRO = ("Your teacher has put two paragraphs on the board. One argues that
               "nominalisation. Proofread the paragraphs.")
 
 PARA_A = (
-    "Can anyone seriously deny that technology has made us lazier? Not only teenagers "
-    "waste entire afternoons watching videos, but they also order every meal through "
-    "delivery apps who bring food to their door within minutes. Apps, which are designed "
-    "to help with homework, are frequently used for gaming instead. Students which live "
-    "within walking distance still take the bus because moving feels like an unnecessary "
-    "burden. The important of physical activity is something that our generation has "
-    "completely forgotten. Only when someone hides their phone they can remember what life "
-    "used to be like."
+    "Everyone claims that technology makes life easier, but the truth is far less pleasant. "
+    "Not only teenagers order food instead of cooking, but they also replace real "
+    "conversations with emoji-filled messages. They sit for hours on apps, that were designed "
+    "to save time, and end up achieving nothing meaningful. The convenient of instant "
+    "delivery has destroyed any reason to walk to the shops. Rarely parents notice that their "
+    "children have forgotten how to hold a proper conversation. Only when someone removes "
+    "every screen from the house the family remembers what silence feels like."
 )
 
 PARA_B = (
-    "Has technology truly destroyed our work ethic, or are we simply judging a new "
-    "generation by outdated beliefs? Many adults, which grew up without smartphones, "
-    "accuse young people of laziness simply because their work happens on a screen. Never "
-    "parents admit that teenagers today run online businesses and solve problems that "
-    "older generations could not. What they fail to see is the significant of these new "
-    "skills for the modern workplace. They also miss the possible that young people can "
-    "be productive while holding a phone. In fact, technology has merely challenged the "
-    "believe that hard work must always look physical."
+    "Has technology really destroyed our generation, or have older adults simply "
+    "misunderstood how we work? What they refuse to accept is that young people today manage "
+    "schoolwork alongside online projects they could never have completed without the internet. "
+    "Not only teenagers of the past lacked these tools, but they also missed the opportunities "
+    "that digital platforms create. The believe that real work must involve physical sweat ignores "
+    "the fact that running a website demands just as much effort. Rarely critics acknowledge that "
+    "a teenager editing videos is working just as hard as someone lifting boxes. The reason because "
+    "teenagers seem distracted is not laziness but the creative work they are doing on their phones. "
+    "Only when adults look at the results of their work they can understand what teenagers "
+    "actually achieve."
 )
 
 QUIZ_KEY = [
-    ("A1", "Not only do teenagers waste entire afternoons watching videos, but they also "
-           "order every meal through delivery apps, which bring food to their door within minutes. "
+    ("1A", "Not only do teenagers order food instead of cooking... "
            "(Move 'do' before the subject \u2014 'Not only' inverts the subject and the verb.)"),
-    ("A2", "Apps, which are designed to help with homework, are frequently used for gaming "
-           "instead. Students, who live within walking distance, still take the bus... "
-           "(Use 'who' for people, not 'which' \u2014 a relative pronoun for people is needed.)"),
-    ("A3", "The importance of physical activity is something that our generation has "
-           "completely forgotten. "
+    ("2A", "They sit for hours on apps, which were designed to save time... "
+           "('that' cannot be used after a comma in a non-restrictive clause; use 'which'.)"),
+    ("3A", "The convenience of instant delivery has destroyed any reason to walk to the shops. "
            "('important' \u2192 'importance' \u2014 a noun is needed after 'the'.)"),
-    ("A4", "Only when someone hides their phone can they remember what life used to be like. "
-           "(Move 'can' before the subject \u2014 'Only when' inverts the subject and the verb.)"),
-    ("A5", "Many adults, who grew up without smartphones, accuse young people of laziness... "
-           "(Use 'who' for people, not 'which' \u2014 a relative pronoun for people is needed.)"),
-    ("B1", "Never do parents admit that teenagers today run online businesses... "
-           "(Move 'do' before the subject \u2014 'Never' inverts the subject and the verb.)"),
-    ("B2", "What they fail to see is the significance of these new skills for the modern workplace. "
-           "('significant' \u2192 'significance' \u2014 a noun is needed after 'the'.)"),
-    ("B3", "They also miss the possibility that young people can be productive while holding a phone. "
-           "('possible' \u2192 'possibility' \u2014 a noun is needed after 'the'.)"),
-    ("B4", "In fact, technology has merely challenged the belief that hard work must always look physical. "
+    ("4A", "Rarely do parents notice that their children have forgotten how to hold a proper conversation. "
+           "(Move 'do' before the subject \u2014 'Rarely' inverts the subject and the verb.)"),
+    ("5A", "Only when someone removes every screen from the house does the family remember what silence feels like. "
+           "(Move 'does' before the subject \u2014 'Only when' inverts the subject and the verb.)"),
+    ("1B", "Not only did teenagers of the past lack these tools... "
+           "(Move 'did' before the subject \u2014 'Not only' inverts the subject and the verb.)"),
+    ("2B", "The belief that real work must involve physical sweat ignores the fact that running a website "
+           "demands just as much effort. "
            "('believe' \u2192 'belief' \u2014 a noun is needed after 'the'.)"),
-    ("B5", ""),  # placeholder - only 9 errors shown? No wait, I need 10 corrections
-]
-
-# Actually let me recount errors.
-# Para A errors:
-# 1. Not only teenagers → Not only do teenagers (inversion)
-# 2. apps who → apps which (relative pronoun)
-# 3. Students which → Students who (relative pronoun)
-# 4. The important → The importance (nominalisation)
-# 5. they can remember → can they remember (inversion)
-# That's 5 errors.
-# Para B errors:
-# 1. adults which → adults who (relative pronoun)
-# 2. Never parents → Never do parents (inversion)
-# 3. significant → significance (nominalisation)
-# 4. possible → possibility (nominalisation)
-# 5. believe → belief (word form / nominalisation)
-# That's 5 errors.
-
-QUIZ_KEY = [
-    ("1A", "Not only do teenagers waste entire afternoons watching videos... "
-            "(Move 'do' before the subject \u2014 'Not only' inverts the subject and the verb.)"),
-    ("2A", "...delivery apps, which bring food to their door within minutes... "
-            "(Use 'which' for things, not 'who' \u2014 a relative pronoun for things is needed.)"),
-    ("3A", "Students, who live within walking distance, still take the bus... "
-            "(Use 'who' for people, not 'which' \u2014 a relative pronoun for people is needed.)"),
-    ("4A", "The importance of physical activity is something that our generation has "
-            "completely forgotten. "
-            "('important' \u2192 'importance' \u2014 a noun is needed after 'the'.)"),
-    ("5A", "Only when someone hides their phone can they remember what life used to be like. "
-            "(Move 'can' before the subject \u2014 'Only when' inverts the subject and the verb.)"),
-    ("1B", "Many adults, who grew up without smartphones, accuse young people of laziness. "
-            "(Use 'who' for people, not 'which' \u2014 a relative pronoun for people is needed.)"),
-    ("2B", "Never do parents admit that teenagers today run online businesses... "
-            "(Move 'do' before the subject \u2014 'Never' inverts the subject and the verb.)"),
-    ("3B", "...the significance of these new skills for the modern workplace. "
-            "('significant' \u2192 'significance' \u2014 a noun is needed after 'the'.)"),
-    ("4B", "...the possibility that young people can be productive while holding a phone. "
-            "('possible' \u2192 'possibility' \u2014 a noun is needed after 'the'.)"),
-    ("5B", "In fact, technology has merely challenged the belief that hard work must always look physical. "
-            "('believe' \u2192 'belief' \u2014 a noun is needed after 'the'.)"),
+    ("3B", "Rarely do critics acknowledge that a teenager editing videos is working just as hard as "
+           "someone lifting boxes. "
+           "(Move 'do' before the subject \u2014 'Rarely' inverts the subject and the verb.)"),
+    ("4B", "The reason why teenagers seem distracted is not laziness but the creative work they are doing "
+           "on their phones. "
+           "('because' cannot follow 'The reason'; use 'why' or 'that'.)"),
+    ("5B", "Only when adults look at the results of their work can they understand what teenagers actually "
+           "achieve. "
+           "(Move 'can' before the subject \u2014 'Only when' inverts the subject and the verb.)"),
 ]
 
 # ---------------------------------------------------------------- Part 2: Cleft patterns + class practice
+# Order: Wh-clefts first, then It-clefts
 P2_INTRO = ("A cleft sentence breaks one idea into two parts so the most important "
             "information stands out. Study the patterns below.")
 
 EXAMPLES = [
-    ("Example 1: It-cleft \u2013 focusing on the cause",
-     "People communicate less because they use messaging apps.",
-     "It is messaging apps that make people communicate less.",
-     "Young people used to meet at the park after school, but now everyone sends messages "
-     "from their bedrooms. A quick text is easier than a real conversation, so face-to-face "
-     "friendships have become rare. It is messaging apps that make people communicate less, "
-     "and this change will only grow deeper as technology advances."),
-    ("Example 2: It-cleft \u2013 setting up a contrast",
-     "Some people blame social media, but smartphones cause the real problem.",
-     "While some people blame social media, it is smartphones that cause the real problem.",
-     "Every day there are news stories about the dangers of social media. While some people "
-     "blame social media, it is smartphones that cause the real problem. Without a phone in "
-     "their pocket, teenagers could not check their accounts every five minutes."),
-    ("Example 3: Wh-cleft \u2013 presenting a recommendation",
+    # WH-CLEFTS FIRST
+    ("Example 1: Wh-cleft \u2013 presenting a recommendation",
      "Schools should teach students how to communicate face to face.",
      "What schools should do is teach students how to communicate face to face.",
      "Many teachers complain that their students cannot hold a proper conversation. What "
      "schools should do is teach students how to communicate face to face. A single "
      "workshop on active listening would help teenagers rebuild the skills that messaging "
      "apps have quietly taken away."),
-    ("Example 4: All-cleft \u2013 naming the only thing needed",
+    ("Example 2: All-cleft \u2013 naming the only thing needed",
      "Teenagers only need one real conversation to remember the value of talking.",
      "All teenagers need is one real conversation to remember the value of talking.",
      "Parents often buy expensive devices or hire tutors to help their children socially. All "
      "teenagers need is one real conversation to remember the value of talking. Once they "
      "experience the warmth of genuine human connection, the cold comfort of emojis will "
      "seem far less appealing."),
+    # THEN IT-CLEFTS
+    ("Example 3: It-cleft \u2013 focusing on the cause",
+     "People communicate less because they use messaging apps.",
+     "It is messaging apps that make people communicate less.",
+     "Young people used to meet at the park after school, but now everyone sends messages "
+     "from their bedrooms. A quick text is easier than a real conversation, so face-to-face "
+     "friendships have become rare. It is messaging apps that make people communicate less, "
+     "and this change will only grow deeper as technology advances."),
+    ("Example 4: It-cleft \u2013 setting up a contrast",
+     "Some people blame social media, but smartphones cause the real problem.",
+     "While some people blame social media, it is smartphones that cause the real problem.",
+     "Every day there are news stories about the dangers of social media. While some people "
+     "blame social media, it is smartphones that cause the real problem. Without a phone in "
+     "their pocket, teenagers could not check their accounts every five minutes."),
 ]
 
-# Class practice after each example (easy, hard)
+# Class practice after each example (easy, harder)
 CLASS_PRACTICE = [
-    # After Example 1 (It-cleft cause)
-    [
-        ("Class question 1 (Easy): It-cleft \u2013 the cause",
-         "Young people forget social skills because they text too much.",
-         "Begin with \u2018It is the overuse of texting \u2026\u2019.",
-         "It is the overuse of texting that makes young people forget social skills."),
-        ("Class question 2 (Harder): It-cleft \u2013 the cause",
-         "Teenagers struggle to focus because notifications interrupt them constantly.",
-         "Begin with \u2018It is the constant interruptions \u2026\u2019.",
-         "It is the constant interruptions from notifications that make teenagers struggle to focus."),
-    ],
-    # After Example 2 (It-cleft contrast)
-    [
-        ("Class question 1 (Easy): It-cleft \u2013 the contrast",
-         "Some blame phones for tiredness, but late-night gaming is the real cause.",
-         "Begin with \u2018While some blame phones for tiredness \u2026\u2019.",
-         "While some blame phones for tiredness, it is late-night gaming that is the real cause."),
-        ("Class question 2 (Harder): It-cleft \u2013 the contrast",
-         "People say teenagers are antisocial, but they themselves avoid family dinners.",
-         "Begin with \u2018While people say teenagers are antisocial \u2026\u2019.",
-         "While people say teenagers are antisocial, it is adults who avoid family dinners."),
-    ],
-    # After Example 3 (Wh-cleft recommendation)
+    # After Example 1 (Wh-cleft recommendation)
     [
         ("Class question 1 (Easy): Wh-cleft \u2013 recommendation",
          "Schools should teach students how to start a real conversation.",
@@ -211,7 +155,7 @@ CLASS_PRACTICE = [
          "Begin with \u2018What teenagers need \u2026\u2019.",
          "What teenagers need is a safe space to practise speaking in groups."),
     ],
-    # After Example 4 (All-cleft)
+    # After Example 2 (All-cleft)
     [
         ("Class question 1 (Easy): All-cleft",
          "Teenagers only need one supportive friend to feel understood.",
@@ -222,46 +166,51 @@ CLASS_PRACTICE = [
          "Begin with \u2018All teenagers need \u2026\u2019.",
          "All teenagers need is the bravery to speak to a stranger."),
     ],
+    # After Example 3 (It-cleft cause)
+    [
+        ("Class question 1 (Easy): It-cleft \u2013 the cause",
+         "Young people forget social skills because they text too much.",
+         "Begin with \u2018It is the overuse of texting \u2026\u2019.",
+         "It is the overuse of texting that makes young people forget social skills."),
+        ("Class question 2 (Harder): It-cleft \u2013 the cause",
+         "Teenagers struggle to focus because notifications interrupt them constantly.",
+         "Begin with \u2018It is the constant interruptions \u2026\u2019.",
+         "It is the constant interruptions from notifications that make teenagers struggle to focus."),
+    ],
+    # After Example 4 (It-cleft contrast)
+    [
+        ("Class question 1 (Easy): It-cleft \u2013 the contrast",
+         "Some blame phones for tiredness, but late-night gaming is the real cause.",
+         "Begin with \u2018While some blame phones for tiredness \u2026\u2019.",
+         "While some blame phones for tiredness, it is late-night gaming that is the real cause."),
+        ("Class question 2 (Harder): It-cleft \u2013 the contrast",
+         "People say teenagers are antisocial, but they themselves avoid family dinners.",
+         "Begin with \u2018While people say teenagers are antisocial \u2026\u2019.",
+         "While people say teenagers are antisocial, it is adults who avoid family dinners."),
+    ],
 ]
 
-# ---------------------------------------------------------------- Part 3: Independent practice sets
-SETS_INTRO = ("Rewrite each simple sentence as a cleft sentence. The sentences are about "
-              "technology and communication, so keep the register formal. Sets 1\u20134 are "
-              "straightforward; sets 5\u20138 require you to change the part of speech.")
+# ---------------------------------------------------------------- Part 3: Independent practice sets (4 only, no hints)
+SETS_INTRO = ("Rewrite each sentence as a cleft sentence. The type of cleft to use is shown "
+              "in brackets.")
 
 SETS = [
-    ("Example Set 1 (It-cleft \u2013 the cause)",
+    ("Set 1: It-cleft \u2013 the cause",
      "Teenagers send short messages because they are afraid of real conversations.",
-     "Begin with \u2018It is the fear of real conversations \u2026\u2019.",
+     "Use an IT-cleft.",
      "It is the fear of real conversations that makes teenagers send short messages."),
-    ("Example Set 2 (Wh-cleft \u2013 what is needed)",
+    ("Set 2: Wh-cleft \u2013 the recommendation",
      "Students need to practise face-to-face communication.",
-     "Begin with \u2018What students need to do \u2026\u2019.",
+     "Use a WHAT-cleft.",
      "What students need to do is practise face-to-face communication."),
-    ("Example Set 3 (It-cleft \u2013 the contrast)",
-     "People blame social media, but modern phones are the real problem.",
-     "Begin with \u2018While people blame social media \u2026\u2019.",
-     "While people blame social media, it is modern phones that are the real problem."),
-    ("Example Set 4 (All-cleft \u2013 the only thing needed)",
-     "Teenagers only need one proper conversation to understand the value of talking.",
-     "Begin with \u2018All teenagers need \u2026\u2019.",
-     "All teenagers need is one proper conversation to understand the value of talking."),
-    ("Example Set 5 (It-cleft \u2013 the cause, word-form change)",
-     "People feel brave when they insult others online because they are anonymous.",
-     "Begin with \u2018It is the anonymity \u2026\u2019.",
-     "It is the anonymity of the internet that makes people feel brave when they insult others online."),
-    ("Example Set 6 (It-cleft \u2013 the contrast, word-form change)",
-     "People think technology is convenient, but it actually destroys our patience.",
-     "Begin with \u2018While people think technology is convenient \u2026\u2019.",
-     "While people think technology is convenient, it is the convenience of modern devices that destroys our patience."),
-    ("Example Set 7 (Wh-cleft \u2013 the recommendation, word-form change)",
-     "Schools should make students aware that talking face to face is important.",
-     "Begin with \u2018What schools should do \u2026\u2019.",
-     "What schools should do is make students aware of the importance of talking face to face."),
-    ("Example Set 8 (All-cleft \u2013 the only thing needed, word-form change)",
-     "Teenagers only need to be confident for one minute to start a real conversation.",
-     "Begin with \u2018All teenagers need \u2026\u2019.",
+    ("Set 3: All-cleft \u2013 the only thing needed",
+     "Teenagers only need to be confident to start a real conversation.",
+     "Use an ALL-cleft.",
      "All teenagers need is the confidence to start a real conversation."),
+    ("Set 4: It-cleft \u2013 the contrast",
+     "People think technology is convenient, but it actually destroys our patience.",
+     "Use an IT-cleft with WHILE.",
+     "While people think technology is convenient, it is the convenience of modern devices that destroys our patience."),
 ]
 
 # ---------------------------------------------------------------- Part 4: Writing Task
@@ -442,7 +391,7 @@ def build(variant="teacher"):
                 b.set_cell(t, 2, 1, "")
             b.push(t)
 
-    # -- Part 3: Independent practice sets
+    # -- Part 3: Independent practice sets (4 only, no hints)
     el = b.clone(P_H1); b.set_text(el, "Part 3: Practice sets"); b.push(el)
     el = b.clone(P_SETINTRO); b.set_text(el, SETS_INTRO); b.push(el)
     for title, simple, prompt, answer in SETS:
