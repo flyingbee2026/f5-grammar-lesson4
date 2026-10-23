@@ -191,23 +191,24 @@ SAMPLES = [
     ("Sample answer 1 (It-cleft) ",
      "Artificial intelligence is changing the way students learn, but not every change is "
      "positive. It is the loss of independent thinking that worries teachers most, as too "
-     "many teenagers now let apps write their essays. Schools should therefore limit AI use "
-     "in homework, which would force students to develop their own ideas. A simple rule "
-     "requiring a first draft without AI would restore the value of real effort."),
+     "many teenagers now let apps write their essays without even reading the questions "
+     "first. Schools should therefore limit AI use in all homework tasks, which would force "
+     "students to develop their own ideas and opinions. A simple rule requiring a first "
+     "draft without AI would restore the value of real effort."),
     ("Sample answer 2 (Wh-cleft) ",
      "What concerns parents most is that their children are losing the ability to think for "
      "themselves. Artificial intelligence can answer almost any question instantly, so "
      "students no longer wrestle with difficult problems on their own. Schools should "
-     "require students to complete at least one draft without any AI assistance, which "
-     "would teach them the patience that genuine learning demands. Only then will they "
-     "understand that struggle is not failure but the beginning of real growth."),
+     "require students to complete at least one draft without any AI assistance of any "
+     "kind, which would teach them the patience that genuine learning demands. Only then "
+     "will they understand that struggle is not failure but the beginning of real growth."),
     ("Sample answer 3 (All-cleft) ",
      "All schools need to do is teach students how to use AI as a tool rather than a "
      "replacement for thinking. Many teenagers now trust an app more than their own "
      "judgment, which means they never develop the confidence to solve problems alone. A "
-     "short lesson on verifying AI answers with real sources would show students that "
-     "intelligence is not about speed but about understanding. This small change could "
-     "transform the way they approach every subject."),
+     "short practical lesson on verifying AI answers with real sources would show students "
+     "that true intelligence is not about speed but about understanding. This small change "
+     "could transform the way they approach every subject."),
 ]
 
 SAMPLE_NOTE = ("Each sample uses ONE cleft: Sample 1 an it-cleft (It is \u2026 that \u2026), "
