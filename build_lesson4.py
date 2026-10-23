@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build F5 Grammar Lesson 4 (revised): Cleft sentences — teacher version.
+"""Build F5 Grammar Lesson 4 (revised v3): Cleft sentences — teacher version.
 
 Template = Helen's finalised Lesson 3 TEACHER docx (keeps styles.xml).
 """
@@ -49,55 +49,100 @@ TITLE = "Grammar \u2013 Lesson 4: Cleft sentences"
 TOPIC = "Cleft sentences"
 
 # ---------------------------------------------------------------- Part 1: Proofreading
-QUIZ_INTRO = ("Each paragraph contains FIVE errors. The errors include relative clauses, "
-              "inverted patterns and nominalisation. Proofread the paragraphs.")
+QUIZ_INTRO = ("Your teacher has put two paragraphs on the board. One argues that "
+              "technology has made people lazier (Paragraph A). The other argues that "
+              "technology has not made us lazier (Paragraph B). Each paragraph contains "
+              "FIVE errors. The errors include relative clauses, inverted patterns and "
+              "nominalisation. Proofread the paragraphs.")
 
 PARA_A = (
-    "Technology has undoubtedly made our generation lazier. Not only we spend hours "
-    "scrolling through social media, but we also order every meal through delivery apps, "
-    "which means we never leave the house. Students, which live near school, still take "
-    "the bus because walking seems too much effort. Rarely teenagers read a book when "
-    "they can watch a video summary in five minutes. The important of exercising regularly "
-    "is something that many of us have forgotten. Only by admitting the problem we can "
-    "start to build healthier habits."
+    "Can anyone seriously deny that technology has made us lazier? Not only teenagers "
+    "waste entire afternoons watching videos, but they also order every meal through "
+    "delivery apps who bring food to their door within minutes. Apps, which are designed "
+    "to help with homework, are frequently used for gaming instead. Students which live "
+    "within walking distance still take the bus because moving feels like an unnecessary "
+    "burden. The important of physical activity is something that our generation has "
+    "completely forgotten. Only when someone hides their phone they can remember what life "
+    "used to be like."
 )
 
 PARA_B = (
-    "Technology has not made us lazier; it has simply changed the way we work. What "
-    "critics fail to understand is that apps save us time for more valuable activities. "
-    "Not only students can complete their homework faster with online tools, but they "
-    "also use the time they save to learn new skills, that explains why so many teenagers "
-    "now know how to edit videos. The belief that young people do nothing meaningful on "
-    "their phones is wrong, because many of them, which run successful online businesses, "
-    "started from nothing. The significant of these digital skills should not be ignored, "
-    "as they prepare us for the modern workplace. Only when we accept that technology is a "
-    "tool we can stop blaming it for our own lack of discipline."
+    "Has technology truly destroyed our work ethic, or are we simply judging a new "
+    "generation by outdated beliefs? Many adults, which grew up without smartphones, "
+    "accuse young people of laziness simply because their work happens on a screen. Never "
+    "parents admit that teenagers today run online businesses and solve problems that "
+    "older generations could not. What they fail to see is the significant of these new "
+    "skills for the modern workplace. They also miss the possible that young people can "
+    "be productive while holding a phone. In fact, technology has merely challenged the "
+    "believe that hard work must always look physical."
 )
 
 QUIZ_KEY = [
-    ("1A", "Not only do we spend hours scrolling through social media... "
-           "(Move \u2018do\u2019 before the subject \u2014 \u2018Not only\u2019 inverts.)"),
-    ("2A", "Students, who live near school... "
-           "(\u2018which\u2019 \u2192 \u2018who\u2019 \u2014 a relative pronoun for people is needed.)"),
-    ("3A", "Rarely do teenagers read a book... "
-           "(Move \u2018do\u2019 before the subject \u2014 \u2018Rarely\u2019 inverts.)"),
-    ("4A", "The importance of exercising regularly... "
-           "(\u2018important\u2019 \u2192 \u2018importance\u2019 \u2014 a noun is needed after \u2018the\u2019.)"),
-    ("5A", "Only by admitting the problem can we start... "
-           "(Move \u2018can\u2019 before the subject \u2014 \u2018Only by\u2019 inverts.)"),
-    ("1B", "Not only can students complete their homework... "
-           "(Move \u2018can\u2019 before the subject \u2014 \u2018Not only\u2019 inverts.)"),
-    ("2B", "...learn new skills, which explains why so many teenagers... "
-           "(\u2018that\u2019 \u2192 \u2018which\u2019 \u2014 a relative pronoun is needed after a comma.)"),
-    ("3B", "...many of them, who run successful online businesses... "
-           "(\u2018which\u2019 \u2192 \u2018who\u2019 \u2014 a relative pronoun for people is needed.)"),
-    ("4B", "The significance of these digital skills... "
-           "(\u2018significant\u2019 \u2192 \u2018significance\u2019 \u2014 a noun is needed after \u2018the\u2019.)"),
-    ("5B", "Only when we accept that technology is a tool can we stop... "
-           "(Move \u2018can\u2019 before the subject \u2014 \u2018Only when\u2019 inverts.)"),
+    ("A1", "Not only do teenagers waste entire afternoons watching videos, but they also "
+           "order every meal through delivery apps, which bring food to their door within minutes. "
+           "(Move 'do' before the subject \u2014 'Not only' inverts the subject and the verb.)"),
+    ("A2", "Apps, which are designed to help with homework, are frequently used for gaming "
+           "instead. Students, who live within walking distance, still take the bus... "
+           "(Use 'who' for people, not 'which' \u2014 a relative pronoun for people is needed.)"),
+    ("A3", "The importance of physical activity is something that our generation has "
+           "completely forgotten. "
+           "('important' \u2192 'importance' \u2014 a noun is needed after 'the'.)"),
+    ("A4", "Only when someone hides their phone can they remember what life used to be like. "
+           "(Move 'can' before the subject \u2014 'Only when' inverts the subject and the verb.)"),
+    ("A5", "Many adults, who grew up without smartphones, accuse young people of laziness... "
+           "(Use 'who' for people, not 'which' \u2014 a relative pronoun for people is needed.)"),
+    ("B1", "Never do parents admit that teenagers today run online businesses... "
+           "(Move 'do' before the subject \u2014 'Never' inverts the subject and the verb.)"),
+    ("B2", "What they fail to see is the significance of these new skills for the modern workplace. "
+           "('significant' \u2192 'significance' \u2014 a noun is needed after 'the'.)"),
+    ("B3", "They also miss the possibility that young people can be productive while holding a phone. "
+           "('possible' \u2192 'possibility' \u2014 a noun is needed after 'the'.)"),
+    ("B4", "In fact, technology has merely challenged the belief that hard work must always look physical. "
+           "('believe' \u2192 'belief' \u2014 a noun is needed after 'the'.)"),
+    ("B5", ""),  # placeholder - only 9 errors shown? No wait, I need 10 corrections
 ]
 
-# ---------------------------------------------------------------- Part 2: Cleft patterns
+# Actually let me recount errors.
+# Para A errors:
+# 1. Not only teenagers → Not only do teenagers (inversion)
+# 2. apps who → apps which (relative pronoun)
+# 3. Students which → Students who (relative pronoun)
+# 4. The important → The importance (nominalisation)
+# 5. they can remember → can they remember (inversion)
+# That's 5 errors.
+# Para B errors:
+# 1. adults which → adults who (relative pronoun)
+# 2. Never parents → Never do parents (inversion)
+# 3. significant → significance (nominalisation)
+# 4. possible → possibility (nominalisation)
+# 5. believe → belief (word form / nominalisation)
+# That's 5 errors.
+
+QUIZ_KEY = [
+    ("1A", "Not only do teenagers waste entire afternoons watching videos... "
+            "(Move 'do' before the subject \u2014 'Not only' inverts the subject and the verb.)"),
+    ("2A", "...delivery apps, which bring food to their door within minutes... "
+            "(Use 'which' for things, not 'who' \u2014 a relative pronoun for things is needed.)"),
+    ("3A", "Students, who live within walking distance, still take the bus... "
+            "(Use 'who' for people, not 'which' \u2014 a relative pronoun for people is needed.)"),
+    ("4A", "The importance of physical activity is something that our generation has "
+            "completely forgotten. "
+            "('important' \u2192 'importance' \u2014 a noun is needed after 'the'.)"),
+    ("5A", "Only when someone hides their phone can they remember what life used to be like. "
+            "(Move 'can' before the subject \u2014 'Only when' inverts the subject and the verb.)"),
+    ("1B", "Many adults, who grew up without smartphones, accuse young people of laziness. "
+            "(Use 'who' for people, not 'which' \u2014 a relative pronoun for people is needed.)"),
+    ("2B", "Never do parents admit that teenagers today run online businesses... "
+            "(Move 'do' before the subject \u2014 'Never' inverts the subject and the verb.)"),
+    ("3B", "...the significance of these new skills for the modern workplace. "
+            "('significant' \u2192 'significance' \u2014 a noun is needed after 'the'.)"),
+    ("4B", "...the possibility that young people can be productive while holding a phone. "
+            "('possible' \u2192 'possibility' \u2014 a noun is needed after 'the'.)"),
+    ("5B", "In fact, technology has merely challenged the belief that hard work must always look physical. "
+            "('believe' \u2192 'belief' \u2014 a noun is needed after 'the'.)"),
+]
+
+# ---------------------------------------------------------------- Part 2: Cleft patterns + class practice
 P2_INTRO = ("A cleft sentence breaks one idea into two parts so the most important "
             "information stands out. Study the patterns below.")
 
@@ -131,7 +176,55 @@ EXAMPLES = [
      "seem far less appealing."),
 ]
 
-# ---------------------------------------------------------------- Part 3: Practice sets
+# Class practice after each example (easy, hard)
+CLASS_PRACTICE = [
+    # After Example 1 (It-cleft cause)
+    [
+        ("Class question 1 (Easy): It-cleft \u2013 the cause",
+         "Young people forget social skills because they text too much.",
+         "Begin with \u2018It is the overuse of texting \u2026\u2019.",
+         "It is the overuse of texting that makes young people forget social skills."),
+        ("Class question 2 (Harder): It-cleft \u2013 the cause",
+         "Teenagers struggle to focus because notifications interrupt them constantly.",
+         "Begin with \u2018It is the constant interruptions \u2026\u2019.",
+         "It is the constant interruptions from notifications that make teenagers struggle to focus."),
+    ],
+    # After Example 2 (It-cleft contrast)
+    [
+        ("Class question 1 (Easy): It-cleft \u2013 the contrast",
+         "Some blame phones for tiredness, but late-night gaming is the real cause.",
+         "Begin with \u2018While some blame phones for tiredness \u2026\u2019.",
+         "While some blame phones for tiredness, it is late-night gaming that is the real cause."),
+        ("Class question 2 (Harder): It-cleft \u2013 the contrast",
+         "People say teenagers are antisocial, but they themselves avoid family dinners.",
+         "Begin with \u2018While people say teenagers are antisocial \u2026\u2019.",
+         "While people say teenagers are antisocial, it is adults who avoid family dinners."),
+    ],
+    # After Example 3 (Wh-cleft recommendation)
+    [
+        ("Class question 1 (Easy): Wh-cleft \u2013 recommendation",
+         "Schools should teach students how to start a real conversation.",
+         "Begin with \u2018What schools should do \u2026\u2019.",
+         "What schools should do is teach students how to start a real conversation."),
+        ("Class question 2 (Harder): Wh-cleft \u2013 recommendation",
+         "Teenagers need a safe space to practise speaking in groups.",
+         "Begin with \u2018What teenagers need \u2026\u2019.",
+         "What teenagers need is a safe space to practise speaking in groups."),
+    ],
+    # After Example 4 (All-cleft)
+    [
+        ("Class question 1 (Easy): All-cleft",
+         "Teenagers only need one supportive friend to feel understood.",
+         "Begin with \u2018All teenagers need \u2026\u2019.",
+         "All teenagers need is one supportive friend to feel understood."),
+        ("Class question 2 (Harder): All-cleft",
+         "Teenagers only need to feel brave for a moment to speak to a stranger.",
+         "Begin with \u2018All teenagers need \u2026\u2019.",
+         "All teenagers need is the bravery to speak to a stranger."),
+    ],
+]
+
+# ---------------------------------------------------------------- Part 3: Independent practice sets
 SETS_INTRO = ("Rewrite each simple sentence as a cleft sentence. The sentences are about "
               "technology and communication, so keep the register formal. Sets 1\u20134 are "
               "straightforward; sets 5\u20138 require you to change the part of speech.")
@@ -292,31 +385,6 @@ class Builder:
     def set_cell(self, tbl, r, c, text):
         self.set_text(self.cell(tbl, r, c), text)
 
-    def shade(self, tbl, r, c, fill):
-        tc = tbl.findall(qn("w:tr"))[r].findall(qn("w:tc"))[c]
-        tcPr = tc.find(qn("w:tcPr"))
-        for old in tcPr.findall(qn("w:shd")):
-            tcPr.remove(old)
-        shd = etree.SubElement(tcPr, qn("w:shd"))
-        shd.set(qn("w:val"), "clear")
-        shd.set(qn("w:color"), "auto")
-        shd.set(qn("w:fill"), fill)
-
-    @staticmethod
-    def widths(tbl, widths):
-        grid = tbl.find(qn("w:tblGrid"))
-        gcs = grid.findall(qn("w:gridCol"))
-        for gc, w in zip(gcs, widths):
-            gc.set(qn("w:w"), str(w))
-        for tr in tbl.findall(qn("w:tr")):
-            for tc, w in zip(tr.findall(qn("w:tc")), widths):
-                tcPr = tc.find(qn("w:tcPr"))
-                tcW = tcPr.find(qn("w:tcW"))
-                if tcW is None:
-                    tcW = etree.SubElement(tcPr, qn("w:tcW"))
-                tcW.set(qn("w:w"), str(w))
-                tcW.set(qn("w:type"), "dxa")
-
     def add_row(self, tbl, model_row_idx):
         tbl.append(copy.deepcopy(tbl.findall(qn("w:tr"))[model_row_idx]))
 
@@ -341,9 +409,8 @@ def build(variant="teacher"):
     el = b.clone(P_ANS_LABEL); b.set_text(el, "Teacher\u2019s answers"); b.push(el)
 
     at = b.clone(T_ANSWERS)
-    # Update header to remove "(fix both errors)" since each item now has one error
-    header_p = b.cell(at, 0, 1)
-    b.set_text(header_p, "Correction")
+    # Update header row
+    b.set_cell(at, 0, 1, "Correction")
     while len(at.findall(qn("w:tr"))) < len(QUIZ_KEY) + 1:
         b.add_row(at, 1)
     for i, (num, corr) in enumerate(QUIZ_KEY, start=1):
@@ -352,18 +419,30 @@ def build(variant="teacher"):
     b.push(at)
     b.push(b.clone(P_BLANK))
 
-    # -- Part 2: Cleft patterns
+    # -- Part 2: Cleft patterns + class practice
     el = b.clone(P_H2B); b.set_text(el, "Part 2: Cleft sentences in formal writing"); b.push(el)
     el = b.clone(P_PLAIN2); b.set_text(el, P2_INTRO); b.push(el)
-    for title, plain, formal, demo in EXAMPLES:
+    for (title, plain, formal, demo), class_questions in zip(EXAMPLES, CLASS_PRACTICE):
         el = b.clone(P_H3); b.set_text(el, title); b.push(el)
         t = b.clone(T_PAIR)
         b.set_cell(t, 0, 0, "Plain:"); b.set_cell(t, 0, 1, plain)
         b.set_cell(t, 1, 0, "More formal:"); b.set_cell(t, 1, 1, formal)
         b.push(t)
         el = b.clone(P_BOX); b.set_text(el, demo); b.push(el)
+        # Class practice questions (2 per pattern)
+        for cp_title, simple, prompt, answer in class_questions:
+            el = b.clone(P_SETTITLE); b.set_text(el, cp_title); b.push(el)
+            t = b.clone(T_SET)
+            b.set_cell(t, 0, 1, simple)
+            b.set_cell(t, 1, 1, prompt)
+            if variant == "teacher":
+                b.set_cell(t, 2, 1, answer)
+            else:
+                b.set_cell(t, 2, 0, "")
+                b.set_cell(t, 2, 1, "")
+            b.push(t)
 
-    # -- Part 3: Practice sets
+    # -- Part 3: Independent practice sets
     el = b.clone(P_H1); b.set_text(el, "Part 3: Practice sets"); b.push(el)
     el = b.clone(P_SETINTRO); b.set_text(el, SETS_INTRO); b.push(el)
     for title, simple, prompt, answer in SETS:
@@ -371,7 +450,11 @@ def build(variant="teacher"):
         t = b.clone(T_SET)
         b.set_cell(t, 0, 1, simple)
         b.set_cell(t, 1, 1, prompt)
-        b.set_cell(t, 2, 1, answer)
+        if variant == "teacher":
+            b.set_cell(t, 2, 1, answer)
+        else:
+            b.set_cell(t, 2, 0, "")
+            b.set_cell(t, 2, 1, "")
         b.push(t)
 
     # -- Part 4: Writing Task

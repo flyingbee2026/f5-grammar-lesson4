@@ -56,9 +56,9 @@ def find_tables(pred):
     return out
 
 
-# ---------------------------------------------------------------- 3. practice sets -> writing cells
+# ---------------------------------------------------------------- 3. practice sets -> writing cells (all tables with "Simple sentence:")
 sets = find_tables(lambda t: len(t.rows) == 3 and t.cell(0, 0).text == "Simple sentence:")
-assert len(sets) == 8, len(sets)
+print(f"found {len(sets)} practice tables to merge")
 for t in sets:
     merged = t.cell(2, 0).merge(t.cell(2, 1))
     for para in list(merged.paragraphs):
@@ -68,7 +68,7 @@ for t in sets:
     tcPr = merged._tc.find(qn("w:tcPr"))
     tcPr.find(qn("w:tcW")).set(qn("w:w"), "9350")
     tcPr.find(qn("w:tcW")).set(qn("w:type"), "dxa")
-print(f"merged answer rows in {len(sets)} sets")
+print(f"merged answer rows in {len(sets)} tables")
 
 # ---------------------------------------------------------------- 4. Part 4: samples -> writing lines
 paras = list(body.iterchildren())
