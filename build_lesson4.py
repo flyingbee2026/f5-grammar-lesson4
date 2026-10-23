@@ -61,21 +61,19 @@ PARA_A = (
     "conversations with emoji-filled messages. They sit for hours on apps, that were designed "
     "to save time, and end up achieving nothing meaningful. The convenient of instant "
     "delivery has destroyed any reason to walk to the shops. Rarely parents notice that their "
-    "children have forgotten how to hold a proper conversation. Only when someone removes "
-    "every screen from the house the family remembers what silence feels like."
+    "children have forgotten how to hold a proper conversation. Only if teenagers put down their "
+    "phones the family can have a real conversation."
 )
 
 PARA_B = (
-    "Has technology really destroyed our generation, or have older adults simply "
-    "misunderstood how we work? What they refuse to accept is that young people today manage "
-    "schoolwork alongside online projects they could never have completed without the internet. "
-    "Not only teenagers of the past lacked these tools, but they also missed the opportunities "
-    "that digital platforms create. The believe that real work must involve physical sweat ignores "
-    "the fact that running a website demands just as much effort. Rarely critics acknowledge that "
-    "a teenager editing videos is working just as hard as someone lifting boxes. The reason because "
-    "teenagers seem distracted is not laziness but the creative work they are doing on their phones. "
-    "Only when adults look at the results of their work they can understand what teenagers "
-    "actually achieve."
+    "Has technology really destroyed our generation, or have adults simply misunderstood "
+    "how we work? What they refuse to accept is that young people today manage schoolwork "
+    "alongside digital projects what they could never have completed alone. The believe that "
+    "real work must involve physical sweat ignores the fact that running a website demands "
+    "just as much effort. Rarely critics acknowledge that a teenager editing videos is working "
+    "just as hard as someone lifting boxes. The reason because teenagers seem distracted is not "
+    "laziness but the creative work they are doing on their phones. Only when adults look at "
+    "the results of their work they can understand what teenagers actually achieve."
 )
 
 QUIZ_KEY = [
@@ -84,13 +82,13 @@ QUIZ_KEY = [
     ("2A", "They sit for hours on apps, which were designed to save time... "
            "('that' cannot be used after a comma in a non-restrictive clause; use 'which'.)"),
     ("3A", "The convenience of instant delivery has destroyed any reason to walk to the shops. "
-           "('important' \u2192 'importance' \u2014 a noun is needed after 'the'.)"),
+           "('convenient' \u2192 'convenience' \u2014 a noun is needed after 'the'.)"),
     ("4A", "Rarely do parents notice that their children have forgotten how to hold a proper conversation. "
            "(Move 'do' before the subject \u2014 'Rarely' inverts the subject and the verb.)"),
-    ("5A", "Only when someone removes every screen from the house does the family remember what silence feels like. "
-           "(Move 'does' before the subject \u2014 'Only when' inverts the subject and the verb.)"),
-    ("1B", "Not only did teenagers of the past lack these tools... "
-           "(Move 'did' before the subject \u2014 'Not only' inverts the subject and the verb.)"),
+    ("5A", "Only if teenagers put down their phones can the family have a real conversation. "
+           "(Move 'can' before the subject \u2014 'Only if' inverts the subject and the verb.)"),
+    ("1B", "...digital projects which they could never have completed alone... "
+           "('what' cannot be used as a relative pronoun after a noun; use 'which' or 'that'.)"),
     ("2B", "The belief that real work must involve physical sweat ignores the fact that running a website "
            "demands just as much effort. "
            "('believe' \u2192 'belief' \u2014 a noun is needed after 'the'.)"),
@@ -169,9 +167,9 @@ CLASS_PRACTICE = [
     # After Example 3 (It-cleft cause)
     [
         ("Class question 1 (Easy): It-cleft \u2013 the cause",
-         "Young people forget social skills because they text too much.",
-         "Begin with \u2018It is the overuse of texting \u2026\u2019.",
-         "It is the overuse of texting that makes young people forget social skills."),
+         "Young people forget social skills because they use messaging apps.",
+         "Begin with \u2018It is messaging apps \u2026\u2019.",
+         "It is messaging apps that make young people forget social skills."),
         ("Class question 2 (Harder): It-cleft \u2013 the cause",
          "Teenagers struggle to focus because notifications interrupt them constantly.",
          "Begin with \u2018It is the constant interruptions \u2026\u2019.",
