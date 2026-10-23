@@ -3,11 +3,9 @@
 
 Mirrors Helen's Lesson 3 student file exactly:
 - drop the "Teacher's answers" label + its grey table (+ one blank paragraph)
-- blank the answer column of the Part 2 warm-up table
-- drop the Part 2 teacher's note
 - turn each practice set's answer row into ONE merged full-width writing cell
   (two empty paragraphs, gridSpan 2, tcW 9350)
-- drop the sample answers + teacher note in Part 5 and add 7 writing lines
+- drop the sample answers + teacher note in Part 4 and add 7 writing lines
 """
 import copy
 
@@ -58,21 +56,7 @@ def find_tables(pred):
     return out
 
 
-# ---------------------------------------------------------------- 3. warm-up answers
-warm = find_tables(lambda t: len(t.rows) > 3 and t.cell(0, 0).text == "Sentence")[0]
-for r in range(1, len(warm.rows)):
-    for para in warm.cell(r, 1)._tc.findall(P):
-        for run in para.findall(qn("w:r")):
-            para.remove(run)
-print(f"blanked {len(warm.rows) - 1} warm-up answer cells")
-
-# ---------------------------------------------------------------- 4. teacher note (Part 2)
-note = next(el for el in list(body.iterchildren())
-            if el.tag == P and ptext(el).startswith("Teacher\u2019s note: after"))
-drop(body, note)
-print("removed Part 2 teacher note")
-
-# ---------------------------------------------------------------- 5. practice sets -> writing cells
+# ---------------------------------------------------------------- 3. practice sets -> writing cells
 sets = find_tables(lambda t: len(t.rows) == 3 and t.cell(0, 0).text == "Simple sentence:")
 assert len(sets) == 8, len(sets)
 for t in sets:
@@ -86,7 +70,7 @@ for t in sets:
     tcPr.find(qn("w:tcW")).set(qn("w:type"), "dxa")
 print(f"merged answer rows in {len(sets)} sets")
 
-# ---------------------------------------------------------------- 6. Part 5: samples -> writing lines
+# ---------------------------------------------------------------- 4. Part 4: samples -> writing lines
 paras = list(body.iterchildren())
 bullet_i = next(i for i, el in enumerate(paras)
                 if el.tag == P and ptext(el).startswith(" Use ONE cleft"))

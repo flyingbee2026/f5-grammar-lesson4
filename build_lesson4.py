@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-"""Build F5 Grammar Lesson 4: Cleft sentences (teacher version).
+"""Build F5 Grammar Lesson 4 (revised): Cleft sentences — teacher version.
 
-Template = Helen's finalised Lesson 3 TEACHER docx (keeps styles.xml: Heading 1/2/3,
-Table Grid, header fonts, numbering). Every element is a deep copy of the matching
-element in her Lesson 3 file, so borders / shading / indents are identical.
+Template = Helen's finalised Lesson 3 TEACHER docx (keeps styles.xml).
 """
 import copy
 import sys
@@ -17,7 +15,6 @@ OUT = {"teacher": "Lesson 4 - Cleft sentences (Teacher's).docx"}
 XMLSPACE = "{http://www.w3.org/XML/1998/namespace}space"
 
 # ---------------------------------------------------------------- model indices
-# (from the Lesson 3 teacher file dump)
 H_SCHOOL, H_SUBJ, H_TITLE, H_TOPIC = 0, 1, 2, 3
 P_H2 = 4            # Heading 2 part heading
 P_PLAIN = 5         # plain Normal body paragraph
@@ -45,194 +42,139 @@ P_INSTR_2 = 56      # lavender bullet line (wingdings sym + br)
 P_SAMPLE = 58       # grey sample box: bold label run + body run
 P_NOTE = 61         # grey teacher note paragraph
 
-# ---------------------------------------------------------------- content
+# ---------------------------------------------------------------- header
 SCHOOL = "St. Joseph\u2019s Anglo-Chinese School"
 SUBJ = "F.5 English Language"
 TITLE = "Grammar \u2013 Lesson 4: Cleft sentences"
 TOPIC = "Cleft sentences"
 
-QUIZ_INTRO = ("Each sentence contains TWO errors: one in the form of a word (noun or "
-              "adjective) and one in an inverted structure. Proofread the sentences.")
-QUIZ = [
-    "Not only the new canteen is convenient for students, but the convenient of its "
-    "online ordering system also attracts busy teachers.",
-    "Only by eating breakfast students can keep their energy up, yet many teenagers do not "
-    "realise the important of a proper diet.",
-    "Never the school has displayed its old photographs in the hall, although the "
-    "significant of that history is obvious to former students.",
-    "Only by showing customers how their products are made shops can prove the authentic "
-    "of their products.",
-    "Not only losing sleep affects students\u2019 test results, but the lose of "
-    "concentration in class is also a serious problem.",
-    "Never students should feel afraid of making mistakes when they speak English, because "
-    "the confident to speak comes from practice.",
-]
+# ---------------------------------------------------------------- Part 1: Proofreading
+QUIZ_INTRO = ("Each paragraph contains FIVE errors. The errors include relative clauses, "
+              "inverted patterns and nominalisation. Proofread the paragraphs.")
+
+PARA_A = (
+    "Technology has undoubtedly made our generation lazier. Not only we spend hours "
+    "scrolling through social media, but we also order every meal through delivery apps, "
+    "which means we never leave the house. Students, which live near school, still take "
+    "the bus because walking seems too much effort. Rarely teenagers read a book when "
+    "they can watch a video summary in five minutes. The important of exercising regularly "
+    "is something that many of us have forgotten. Only by admitting the problem we can "
+    "start to build healthier habits."
+)
+
+PARA_B = (
+    "Technology has not made us lazier; it has simply changed the way we work. What "
+    "critics fail to understand is that apps save us time for more valuable activities. "
+    "Not only students can complete their homework faster with online tools, but they "
+    "also use the time they save to learn new skills, that explains why so many teenagers "
+    "now know how to edit videos. The belief that young people do nothing meaningful on "
+    "their phones is wrong, because many of them, which run successful online businesses, "
+    "started from nothing. The significant of these digital skills should not be ignored, "
+    "as they prepare us for the modern workplace. Only when we accept that technology is a "
+    "tool we can stop blaming it for our own lack of discipline."
+)
+
 QUIZ_KEY = [
-    ("Not only is the new canteen convenient for students, but the convenience of its "
-     "online ordering system also attracts busy teachers. (Move is before the subject "
-     "\u2014 \u2018Not only\u2019 inverts the subject and the verb; convenient \u2192 "
-     "convenience \u2014 a noun is needed after \u2018the\u2019.)"),
-    ("Only by eating breakfast can students keep their energy up, yet many teenagers do not "
-     "realise the importance of a proper diet. (Move can before students \u2014 \u2018Only "
-     "by\u2019 inverts; important \u2192 importance \u2014 the noun follows \u2018the\u2019.)"),
-    ("Never has the school displayed its old photographs in the hall, although the "
-     "significance of that history is obvious to former students. (Move has before the "
-     "school \u2014 \u2018Never\u2019 inverts; significant \u2192 significance \u2014 a noun "
-     "is needed after \u2018the\u2019.)"),
-    ("Only by showing customers how their products are made can shops prove the "
-     "authenticity of their products. (Move can before shops \u2014 \u2018Only by\u2019 "
-     "inverts; authentic \u2192 authenticity \u2014 the noun follows \u2018the\u2019.)"),
-    ("Not only does losing sleep affect students\u2019 test results, but the loss of "
-     "concentration in class is also a serious problem. (Add does before the subject and use "
-     "the base verb affect \u2014 \u2018Not only\u2019 inverts; lose \u2192 loss \u2014 a noun "
-     "is needed after \u2018the\u2019.)"),
-    ("Never should students feel afraid of making mistakes when they speak English, because "
-     "the confidence to speak comes from practice. (Move should before students \u2014 "
-     "\u2018Never\u2019 inverts; confident \u2192 confidence \u2014 the noun follows "
-     "\u2018the\u2019.)"),
+    ("1A", "Not only do we spend hours scrolling through social media... "
+           "(Move \u2018do\u2019 before the subject \u2014 \u2018Not only\u2019 inverts.)"),
+    ("2A", "Students, who live near school... "
+           "(\u2018which\u2019 \u2192 \u2018who\u2019 \u2014 a relative pronoun for people is needed.)"),
+    ("3A", "Rarely do teenagers read a book... "
+           "(Move \u2018do\u2019 before the subject \u2014 \u2018Rarely\u2019 inverts.)"),
+    ("4A", "The importance of exercising regularly... "
+           "(\u2018important\u2019 \u2192 \u2018importance\u2019 \u2014 a noun is needed after \u2018the\u2019.)"),
+    ("5A", "Only by admitting the problem can we start... "
+           "(Move \u2018can\u2019 before the subject \u2014 \u2018Only by\u2019 inverts.)"),
+    ("1B", "Not only can students complete their homework... "
+           "(Move \u2018can\u2019 before the subject \u2014 \u2018Not only\u2019 inverts.)"),
+    ("2B", "...learn new skills, which explains why so many teenagers... "
+           "(\u2018that\u2019 \u2192 \u2018which\u2019 \u2014 a relative pronoun is needed after a comma.)"),
+    ("3B", "...many of them, who run successful online businesses... "
+           "(\u2018which\u2019 \u2192 \u2018who\u2019 \u2014 a relative pronoun for people is needed.)"),
+    ("4B", "The significance of these digital skills... "
+           "(\u2018significant\u2019 \u2192 \u2018significance\u2019 \u2014 a noun is needed after \u2018the\u2019.)"),
+    ("5B", "Only when we accept that technology is a tool can we stop... "
+           "(Move \u2018can\u2019 before the subject \u2014 \u2018Only when\u2019 inverts.)"),
 ]
 
-WARM_INTRO = ("Complete each cleft sentence with ONE word "
-              "(it / is / was / that / who / what / until / when).")
-WARM = [
-    ("___ is peer pressure that pushes teenagers to join in online bullying.", "It"),
-    ("It ___ the promise of a quick laugh that makes cruel posts so tempting to share.", "is"),
-    ("It was the school newspaper ___ first reported the story.", "that"),
-    ("___ drives a teenager to keep scrolling is the fear of missing out.", "What"),
-    ("It is teachers ___ first notice the change in a student\u2019s behaviour.", "who"),
-    ("All the school needs to do ___ train staff to spot the warning signs.", "is"),
-    ("___ many parents fail to realise is how quickly cruel posts spread.", "What"),
-    ("It ___ the lack of clear rules that allowed the rumours to spread.", "was"),
-    ("It was not ___ parents complained to the principal that the bullying was investigated.",
-     "until"),
-    ("What worries counsellors most ___ the silence of the students who see it happen.", "is"),
-    ("It is the victims of online bullying ___ often suffer in silence.", "who"),
-    ("___ is not the phone itself, but the endless notifications, that distract students.", "It"),
-    ("All it takes ___ five minutes of checking before you share a post.", "is"),
-    ("It was only ___ the school posted the facts that the rumours stopped.", "when"),
-    ("___ struck the teachers most was how fast a single post can reach the whole year group.",
-     "What"),
-    ("It is careless sharing, rather than social media itself, ___ spreads rumours so fast.",
-     "that"),
-    ("What the panel recommends ___ a clearer policy on reporting abuse.", "is"),
-    ("It is one trusted adult, more than any new policy, ___ makes the biggest "
-     "difference to a victim.", "that"),
-    ("___ matters most is that victims know someone is on their side.", "What"),
-    ("It is the way a school responds ___ decides whether victims ever report again.", "that"),
-]
-WARM_NOTE = ("Teacher\u2019s note: after \u2018It is / It was\u2019, use \u2018that\u2019 for things "
-             "and \u2018who\u2019 for people; \u2018which\u2019 is possible for things but less "
-             "common. Accept either word from students in items 3, 5, 11, 16, 18 and 20.")
-
-# Part 3 -- intro (mixed runs: bold+underline on the two examples, like Lesson 3)
-P3_INTRO = [
-    ("A cleft sentence takes one idea and puts it into two parts, so that the most "
-     "important information stands alone: ", "plain"),
-    ("Peer pressure causes online bullying", "bold_u"),
-    (" becomes ", "plain"),
-    ("It is peer pressure that causes online bullying", "bold_u"),
-    (" or ", "plain"),
-    ("What causes online bullying is peer pressure", "bold_u"),
-    (". The word order is broken on purpose, so the emphasis lands exactly where you want "
-     "it. In formal writing, one or two clefts show the marker that you can control sentence "
-     "patterns beyond the ordinary subject\u2013verb order, and they can also carry an idea "
-     "from one sentence into the next.", "plain"),
-]
+# ---------------------------------------------------------------- Part 2: Cleft patterns
+P2_INTRO = ("A cleft sentence breaks one idea into two parts so the most important "
+            "information stands out. Study the patterns below.")
 
 EXAMPLES = [
     ("Example 1: It-cleft \u2013 focusing on the cause",
-     "People post cruel comments because they are anonymous.",
-     "It is anonymity that encourages people to post cruel comments.",
-     "It is anonymity that encourages people to post cruel comments. Behind a screen, nobody "
-     "has to face the person they are hurting, so the usual restraint of a face-to-face "
-     "conversation disappears. Asking students to use their own names on the school forum "
-     "would remove that cover entirely."),
+     "People communicate less because they use messaging apps.",
+     "It is messaging apps that make people communicate less.",
+     "Young people used to meet at the park after school, but now everyone sends messages "
+     "from their bedrooms. A quick text is easier than a real conversation, so face-to-face "
+     "friendships have become rare. It is messaging apps that make people communicate less, "
+     "and this change will only grow deeper as technology advances."),
     ("Example 2: It-cleft \u2013 setting up a contrast",
-     "Many people blame violent games, but the silence of bystanders does the real damage.",
-     "While many people blame violent games, it is the silence of bystanders that does the "
-     "real damage.",
-     "While many people blame violent games, it is the silence of bystanders that does the "
-     "real damage. A cruel post can stay online for days because nobody bothers to report "
-     "it. Teaching students to speak up matters more than banning one more game."),
+     "Some people blame social media, but smartphones cause the real problem.",
+     "While some people blame social media, it is smartphones that cause the real problem.",
+     "Every day there are news stories about the dangers of social media. While some people "
+     "blame social media, it is smartphones that cause the real problem. Without a phone in "
+     "their pocket, teenagers could not check their accounts every five minutes."),
     ("Example 3: Wh-cleft \u2013 presenting a recommendation",
-     "The school should make it easier for victims to report bullying.",
-     "What the school should do is make it easier for victims to report bullying.",
-     "What the school should do is make it easier for victims to report bullying. One "
-     "anonymous form on the school website would take an afternoon to set up. Once students "
-     "know that a report will be read, the silence that protects bullies begins to "
-     "disappear."),
+     "Schools should teach students how to communicate face to face.",
+     "What schools should do is teach students how to communicate face to face.",
+     "Many teachers complain that their students cannot hold a proper conversation. What "
+     "schools should do is teach students how to communicate face to face. A single "
+     "workshop on active listening would help teenagers rebuild the skills that messaging "
+     "apps have quietly taken away."),
     ("Example 4: All-cleft \u2013 naming the only thing needed",
-     "The school only has to post one clear rule about online behaviour.",
-     "All the school has to do is post one clear rule about online behaviour.",
-     "All the school has to do is post one clear rule about online behaviour. A single "
-     "sentence in the student handbook would tell everyone what is expected of them. Such a "
-     "small step would show victims that the school takes the problem seriously, and more of "
-     "them would come forward."),
+     "Teenagers only need one real conversation to remember the value of talking.",
+     "All teenagers need is one real conversation to remember the value of talking.",
+     "Parents often buy expensive devices or hire tutors to help their children socially. All "
+     "teenagers need is one real conversation to remember the value of talking. Once they "
+     "experience the warmth of genuine human connection, the cold comfort of emojis will "
+     "seem far less appealing."),
 ]
 
-OPENERS_TITLE = "Clefts as paragraph openers"
-OPENERS_INTRO = ("Clefts are also useful at the start of a paragraph, an article or a speech: "
-                 "they decide what the reader notices first. Put the it-cleft in your thesis "
-                 "statement, the wh-cleft in your recommendation, and the all-cleft in your "
-                 "closing line.")
-OPENERS = [
-    ("Plain:", "Social media affects teenagers\u2019 self-esteem very strongly."),
-    ("Cleft opener (What \u2026 is \u2026):",
-     "What many adults fail to realise is how strongly social media affects teenagers\u2019 "
-     "self-esteem."),
-    ("Plain:", "Most teenagers only need one adult who will listen without judging them."),
-    ("Cleft opener (All \u2026 is \u2026):",
-     "All most teenagers need is one adult who will listen without judging them."),
-]
+# ---------------------------------------------------------------- Part 3: Practice sets
+SETS_INTRO = ("Rewrite each simple sentence as a cleft sentence. The sentences are about "
+              "technology and communication, so keep the register formal. Sets 1\u20134 are "
+              "straightforward; sets 5\u20138 require you to change the part of speech.")
 
-SETS_INTRO = ("Rewrite each simple sentence as a cleft sentence. The sentences are about life "
-              "online, so keep the register formal. The later sets (4\u20138) are more "
-              "challenging.")
 SETS = [
     ("Example Set 1 (It-cleft \u2013 the cause)",
-     "Teenagers copy the cruel comments of their friends because they are afraid of being "
-     "left out.",
-     "Begin with \u2018It is the fear of being left out \u2026\u2019.",
-     "It is the fear of being left out that leads teenagers to copy the cruel comments of "
-     "their friends."),
+     "Teenagers send short messages because they are afraid of real conversations.",
+     "Begin with \u2018It is the fear of real conversations \u2026\u2019.",
+     "It is the fear of real conversations that makes teenagers send short messages."),
     ("Example Set 2 (Wh-cleft \u2013 what is needed)",
-     "Victims of online bullying need an adult they can trust.",
-     "Begin with \u2018What victims of online bullying need \u2026\u2019.",
-     "What victims of online bullying need is an adult they can trust."),
-    ("Example Set 3 (It-cleft \u2013 the person responsible)",
-     "School counsellors, not the discipline team, should handle bullying cases.",
-     "Begin with \u2018It is school counsellors \u2026\u2019 and use \u2018who\u2019.",
-     "It is school counsellors, not the discipline team, who should handle bullying cases."),
-    ("Example Set 4 (It-cleft \u2013 the contrast)",
-     "Teachers blame social media for the bullying, but the school\u2019s slow response makes "
-     "it worse.",
-     "Begin with \u2018While teachers blame social media for the bullying \u2026\u2019.",
-     "While teachers blame social media for the bullying, it is the school\u2019s slow "
-     "response that makes it worse."),
-    ("Example Set 5 (Wh-cleft \u2013 the recommendation)",
-     "The government should make platforms remove cruel posts within 24 hours.",
-     "Begin with \u2018What the government should do \u2026\u2019.",
-     "What the government should do is make platforms remove cruel posts within 24 hours."),
-    ("Example Set 6 (All-cleft \u2013 the only thing needed)",
-     "To keep victims safe, the school only has to provide a safe place for them at break "
-     "time.",
-     "Begin with \u2018All the school needs to do \u2026\u2019.",
-     "All the school needs to do is provide a safe place for victims at break time."),
-    ("Example Set 7 (Wh-cleft \u2013 the hook)",
-     "Adults say teenagers should just ignore cruel comments, but that is impossible.",
-     "Begin with \u2018What adults fail to understand \u2026\u2019.",
-     "What adults fail to understand is that a cruel comment can follow a teenager "
-     "everywhere."),
-    ("Example Set 8 (It-cleft \u2013 the turning point)",
-     "The school only understood how serious the bullying was after a student stayed away.",
-     "Begin with \u2018It was not until \u2026\u2019.",
-     "It was not until a student stayed away that the school understood how serious the "
-     "bullying was."),
+     "Students need to practise face-to-face communication.",
+     "Begin with \u2018What students need to do \u2026\u2019.",
+     "What students need to do is practise face-to-face communication."),
+    ("Example Set 3 (It-cleft \u2013 the contrast)",
+     "People blame social media, but modern phones are the real problem.",
+     "Begin with \u2018While people blame social media \u2026\u2019.",
+     "While people blame social media, it is modern phones that are the real problem."),
+    ("Example Set 4 (All-cleft \u2013 the only thing needed)",
+     "Teenagers only need one proper conversation to understand the value of talking.",
+     "Begin with \u2018All teenagers need \u2026\u2019.",
+     "All teenagers need is one proper conversation to understand the value of talking."),
+    ("Example Set 5 (It-cleft \u2013 the cause, word-form change)",
+     "People feel brave when they insult others online because they are anonymous.",
+     "Begin with \u2018It is the anonymity \u2026\u2019.",
+     "It is the anonymity of the internet that makes people feel brave when they insult others online."),
+    ("Example Set 6 (It-cleft \u2013 the contrast, word-form change)",
+     "People think technology is convenient, but it actually destroys our patience.",
+     "Begin with \u2018While people think technology is convenient \u2026\u2019.",
+     "While people think technology is convenient, it is the convenience of modern devices that destroys our patience."),
+    ("Example Set 7 (Wh-cleft \u2013 the recommendation, word-form change)",
+     "Schools should make students aware that talking face to face is important.",
+     "Begin with \u2018What schools should do \u2026\u2019.",
+     "What schools should do is make students aware of the importance of talking face to face."),
+    ("Example Set 8 (All-cleft \u2013 the only thing needed, word-form change)",
+     "Teenagers only need to be confident for one minute to start a real conversation.",
+     "Begin with \u2018All teenagers need \u2026\u2019.",
+     "All teenagers need is the confidence to start a real conversation."),
 ]
 
-TASK_TITLE = "Part 5: Writing Task"
-TASK_LINE = ("1. Write ONE paragraph (about 80 words) explaining why online bullying is hard "
-             "for teenagers to escape, and suggesting ONE thing schools could do to help.")
+# ---------------------------------------------------------------- Part 4: Writing Task
+TASK_TITLE = "Part 4: Writing Task"
+TASK_LINE = ("1. Write ONE paragraph (about 80 words) explaining the influence of artificial "
+             "intelligence on students, and suggesting ONE thing schools could do to help.")
 TASK_BULLETS = [
     ("\u2022", None),
     (" Use ", "plain"),
@@ -244,34 +186,34 @@ TASK_BULLETS = [
     (" Use a relative clause or an inverted pattern e.g. Not only \u2026 / Never \u2026 / "
      "Rarely \u2026", "plain"),
 ]
+
 SAMPLES = [
     ("Sample answer 1 (It-cleft) ",
-     "Online bullying is difficult to escape because it follows teenagers home: cruel "
-     "messages appear on their phones long after the school gates have closed. It is this "
-     "constant presence that makes even a short comment so damaging, as there is no safe "
-     "hour in the day. Schools should teach students how to block and report cruel messages, "
-     "which protects every student in the school. A form teacher could cover the basics in "
-     "a single lesson, and the advice would last for years."),
+     "Artificial intelligence is changing the way students learn, but not every change is "
+     "positive. It is the loss of independent thinking that worries teachers most, as too "
+     "many teenagers now let apps write their essays. Schools should therefore limit AI use "
+     "in homework, which would force students to develop their own ideas. A simple rule "
+     "requiring a first draft without AI would restore the value of real effort."),
     ("Sample answer 2 (Wh-cleft) ",
-     "What many victims of online bullying fear most is that adults will simply tell them to "
-     "switch off their phones. That advice, which is usually meant kindly, leaves them alone "
-     "with the abuse. Schools should therefore run regular lessons on blocking and reporting "
-     "cruel messages, and make sure every student knows exactly where to turn for help. "
-     "Silence, in the end, is a bully\u2019s best protection, and a short lesson in form time "
-     "can begin to break it."),
+     "What concerns parents most is that their children are losing the ability to think for "
+     "themselves. Artificial intelligence can answer almost any question instantly, so "
+     "students no longer wrestle with difficult problems on their own. Schools should "
+     "require students to complete at least one draft without any AI assistance, which "
+     "would teach them the patience that genuine learning demands. Only then will they "
+     "understand that struggle is not failure but the beginning of real growth."),
     ("Sample answer 3 (All-cleft) ",
-     "Escaping online bullying is hard because the abuse continues after school, and many "
-     "victims never tell anyone about it. All schools really need to do is give students one "
-     "trusted adult and one simple way to report cruel messages. This small change, which "
-     "costs almost nothing, would help thousands of teenagers currently suffering in "
-     "silence. A tutor-group discussion once a month would keep the topic alive, and victims "
-     "would know that the school is on their side."),
+     "All schools need to do is teach students how to use AI as a tool rather than a "
+     "replacement for thinking. Many teenagers now trust an app more than their own "
+     "judgment, which means they never develop the confidence to solve problems alone. A "
+     "short lesson on verifying AI answers with real sources would show students that "
+     "intelligence is not about speed but about understanding. This small change could "
+     "transform the way they approach every subject."),
 ]
+
 SAMPLE_NOTE = ("Each sample uses ONE cleft: Sample 1 an it-cleft (It is \u2026 that \u2026), "
                "Sample 2 a wh-cleft (What \u2026 is \u2026) and Sample 3 an all-cleft (All "
-               "\u2026 need to do is \u2026). Each sample also contains ONE relative clause "
-               "(\u2018which\u2019 in every case) \u2014 point these out to students before "
-               "they write.")
+               "\u2026 need to do is \u2026). Each sample also contains at least ONE relative "
+               "clause or inverted pattern \u2014 point these out to students before they write.")
 
 
 # ---------------------------------------------------------------- helpers
@@ -294,7 +236,6 @@ class Builder:
         self.body.insert(list(self.body).index(self.sectPr), el)
         return el
 
-    # -- run helpers ---------------------------------------------------
     @staticmethod
     def _rpr(fmt):
         rPr = etree.Element(qn("w:rPr"))
@@ -311,7 +252,6 @@ class Builder:
         return rPr
 
     def set_text(self, p, text):
-        """Replace a paragraph's text, keeping its FIRST run's formatting."""
         runs = p.findall(qn("w:r"))
         assert runs, "paragraph has no run to copy"
         for r in runs[1:]:
@@ -325,7 +265,6 @@ class Builder:
         t.set(XMLSPACE, "preserve")
 
     def set_runs(self, p, parts):
-        """Rebuild a paragraph's runs from (text, fmt|'br'|None-symbol) tuples."""
         for r in p.findall(qn("w:r")):
             p.remove(r)
         for text, fmt in parts:
@@ -334,7 +273,7 @@ class Builder:
             if fmt == "br":
                 etree.SubElement(r, qn("w:br"))
                 continue
-            if fmt is None:      # wingdings bullet
+            if fmt is None:
                 sym = etree.SubElement(r, qn("w:sym"))
                 sym.set(qn("w:font"), "Wingdings")
                 sym.set(qn("w:char"), "F0E0")
@@ -344,7 +283,6 @@ class Builder:
             t.set(XMLSPACE, "preserve")
         return p
 
-    # -- table helpers -------------------------------------------------
     def cell(self, tbl, r, c):
         tr = tbl.findall(qn("w:tr"))[r]
         tc = tr.findall(qn("w:tc"))[c]
@@ -384,8 +322,7 @@ class Builder:
 
 def build(variant="teacher"):
     if variant != "teacher":
-        raise SystemExit("student copy is derived from Helen's finalised teacher docx, "
-                         "not from this builder (see skill: f5-grammar-lessons)")
+        raise SystemExit("student copy is derived from the teacher docx")
     b = Builder()
 
     # -- header block
@@ -394,56 +331,29 @@ def build(variant="teacher"):
         b.set_text(el, text)
         b.push(el)
 
-    # -- Part 1
+    # -- Part 1: Proofreading
     el = b.clone(P_H2); b.set_text(el, "Part 1: Proofreading quiz"); b.push(el)
     el = b.clone(P_PLAIN); b.set_text(el, QUIZ_INTRO); b.push(el)
-    qt = b.clone(T_QUIZ)
-    while len(qt.findall(qn("w:tr"))) < len(QUIZ):
-        b.add_row(qt, 0)
-    for i, s in enumerate(QUIZ):
-        b.set_cell(qt, i, 0, s)
-    for r in qt.findall(qn("w:tr"))[len(QUIZ):]:
-        qt.remove(r)
-    b.push(qt)
+    el = b.clone(P_PLAIN); b.set_text(el, PARA_A); b.push(el)
+    el = b.clone(P_PLAIN); b.set_text(el, PARA_B); b.push(el)
     b.push(b.clone(P_BLANK))
     el = b.clone(P_ANS_LABEL); b.set_text(el, "Teacher\u2019s answers"); b.push(el)
+
     at = b.clone(T_ANSWERS)
+    # Update header to remove "(fix both errors)" since each item now has one error
+    header_p = b.cell(at, 0, 1)
+    b.set_text(header_p, "Correction")
     while len(at.findall(qn("w:tr"))) < len(QUIZ_KEY) + 1:
         b.add_row(at, 1)
-    for i, corr in enumerate(QUIZ_KEY, start=1):
-        b.set_cell(at, i, 0, str(i))
+    for i, (num, corr) in enumerate(QUIZ_KEY, start=1):
+        b.set_cell(at, i, 0, num)
         b.set_cell(at, i, 1, corr)
     b.push(at)
     b.push(b.clone(P_BLANK))
 
-    # -- Part 2
-    el = b.clone(P_H2B); b.set_text(el, "Part 2: Building a cleft sentence"); b.push(el)
-    el = b.clone(P_INSTR); b.set_text(el, WARM_INTRO); b.push(el)
-    wt = b.clone(T_WORDS)
-    rows = wt.findall(qn("w:tr"))
-    for tr in rows:                      # 4 columns -> 2 columns
-        tcs = tr.findall(qn("w:tc"))
-        tr.remove(tcs[3]); tr.remove(tcs[2])
-    grid = wt.find(qn("w:tblGrid"))
-    gcs = grid.findall(qn("w:gridCol"))
-    grid.remove(gcs[3]); grid.remove(gcs[2])
-    base = len(rows)                     # header + 10 data rows
-    for _ in range(20 - (base - 1)):
-        b.add_row(wt, 1)
-    for r in wt.findall(qn("w:tr"))[21:]:
-        wt.remove(r)
-    b.widths(wt, (7350, 2000))
-    b.set_cell(wt, 0, 0, "Sentence")
-    b.set_cell(wt, 0, 1, "Missing word")
-    for i, (sent, ans) in enumerate(WARM, start=1):
-        b.set_cell(wt, i, 0, f"{i}. {sent}")
-        b.set_cell(wt, i, 1, ans)
-    b.push(wt)
-    el = b.clone(P_NOTE); b.set_text(el, WARM_NOTE); b.push(el)
-
-    # -- Part 3
-    el = b.clone(P_H2B); b.set_text(el, "Part 3: Cleft sentences in formal writing"); b.push(el)
-    el = b.clone(P_PLAIN2); b.set_runs(el, P3_INTRO); b.push(el)
+    # -- Part 2: Cleft patterns
+    el = b.clone(P_H2B); b.set_text(el, "Part 2: Cleft sentences in formal writing"); b.push(el)
+    el = b.clone(P_PLAIN2); b.set_text(el, P2_INTRO); b.push(el)
     for title, plain, formal, demo in EXAMPLES:
         el = b.clone(P_H3); b.set_text(el, title); b.push(el)
         t = b.clone(T_PAIR)
@@ -451,42 +361,29 @@ def build(variant="teacher"):
         b.set_cell(t, 1, 0, "More formal:"); b.set_cell(t, 1, 1, formal)
         b.push(t)
         el = b.clone(P_BOX); b.set_text(el, demo); b.push(el)
-    el = b.clone(P_H3_LINK); b.set_text(el, OPENERS_TITLE); b.push(el)
-    el = b.clone(P_PLAIN); b.set_text(el, OPENERS_INTRO); b.push(el)
-    ot = b.clone(T_LINK)
-    b.add_row(ot, 0); b.add_row(ot, 1)
-    for i, (label, text) in enumerate(OPENERS):
-        b.set_cell(ot, i, 0, label); b.set_cell(ot, i, 1, text)
-    b.push(ot)
-    b.push(b.clone(P_BLANK)); b.push(b.clone(P_BLANK))
 
-    # -- Part 4
-    el = b.clone(P_H1); b.set_text(el, "Part 4: Practice sets"); b.push(el)
+    # -- Part 3: Practice sets
+    el = b.clone(P_H1); b.set_text(el, "Part 3: Practice sets"); b.push(el)
     el = b.clone(P_SETINTRO); b.set_text(el, SETS_INTRO); b.push(el)
     for title, simple, prompt, answer in SETS:
         el = b.clone(P_SETTITLE); b.set_text(el, title); b.push(el)
         t = b.clone(T_SET)
         b.set_cell(t, 0, 1, simple)
         b.set_cell(t, 1, 1, prompt)
-        if variant == "teacher":
-            b.set_cell(t, 2, 1, answer)
-        else:
-            b.set_cell(t, 2, 0, "")
-            b.set_cell(t, 2, 1, "")
+        b.set_cell(t, 2, 1, answer)
         b.push(t)
 
-    # -- Part 5
+    # -- Part 4: Writing Task
     el = b.clone(P_H1W); b.set_text(el, TASK_TITLE); b.push(el)
     el = b.clone(P_INSTR_B); b.set_text(el, "Instructions:"); b.push(el)
     el = b.clone(P_INSTR_1); b.set_text(el, TASK_LINE); b.push(el)
     el = b.clone(P_INSTR_2); b.set_runs(el, TASK_BULLETS); b.push(el)
-    if variant == "teacher":
-        b.push(b.clone(P_BLANK))
-        for label, body in SAMPLES:
-            el = b.clone(P_SAMPLE)
-            b.set_runs(el, [(label, "bold"), (body, "plain")])
-            b.push(el)
-        el = b.clone(P_NOTE); b.set_text(el, SAMPLE_NOTE); b.push(el)
+    b.push(b.clone(P_BLANK))
+    for label, body in SAMPLES:
+        el = b.clone(P_SAMPLE)
+        b.set_runs(el, [(label, "bold"), (body, "plain")])
+        b.push(el)
+    el = b.clone(P_NOTE); b.set_text(el, SAMPLE_NOTE); b.push(el)
 
     out = OUT[variant]
     b.doc.save(out)
